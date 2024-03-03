@@ -1,0 +1,65 @@
+.screen{
+    display: flex;
+    /* flex-wrap: wrap; */
+    align-content: flex-start;
+    justify-content: space-between ;
+    align-content: stretch;
+    flex-direction: horizontal;
+    position: absolute;
+    z-index:10;
+    height:100vh ;
+    width:100%;
+    background: radial-gradient(#fc466b,#3f5efb);
+}
+
+*.clicked{
+    transition: 3s ease-out;
+    opacity: 0;
+    
+}
+.exitButton{
+    
+    width: 150px;
+    height:150px;
+    border-radius: 50%;
+    background: linear-gradient(to bottom, #e66465, #9198e5);
+    
+}
+.exitButton:hover{
+    background-image: url("./sprites/tiffany.jpg");
+
+    background-position:center;
+    transition: scale(0.5);
+}
+.intro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.funkyImages{
+    width:300px
+}
+
+/* text pportion */
+
+.centerMe{
+    display: block;
+    margin-top: 0px;
+    margin-bottom: 50px;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 5rem;
+    letter-spacing: 0.15rem;
+    text-transform: uppercase;
+    color: black;
+    
+    text-shadow: -2px 2px #ef3550,
+                 -4px 4px #f48fb1,
+                 -6px 6px #7e57c2,
+                 -8px 8px #2196f3,
+                 -10px 10px #26c6da,
+                 -12px 12px #43a047,
+                 -14px 14px #eeff41,
+                 -16px 16px #f9a825,
+                 -18px 18px #ff5722;
+}
