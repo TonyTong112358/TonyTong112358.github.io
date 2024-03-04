@@ -1,14 +1,15 @@
 import React, { useState, useRef } from "react";
 import "./timeLine.css"
-import useSound from "use-sound";
-
-export const Button = ({ beforeImage, afterImage, direction, text }) => {
+import before from "./images/crystal.jpg"
+import after from "./images/edwardo.jpg"
+export const ButtonDisplay = ({ beforeImage, afterImage, direction, text }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
   
 
   const handleHover = () => {
     setIsHovered(true);
+    
     
   };
 
@@ -28,12 +29,19 @@ export const Button = ({ beforeImage, afterImage, direction, text }) => {
       onMouseEnter={handleHover}
       onMouseLeave={handleUnhover}
       onClick={handleClick}
+      style={{
+        backgroundImage: isHovered?`url(${afterImage})` :`url(${beforeImage})`,
+        
+
+      }}
+
     >
-      <img
+      {/* <img
         src={isClicked ? afterImage : beforeImage}
         alt="Button"
         className="display-image"
-      />
+      /> */}
+     
       {isClicked && (
         <>
           <span className={`arrow ${direction}`}></span>
@@ -79,10 +87,14 @@ export const TimeLine =() =>{
     return(
         <div id="timeLine" >
             <div className="american">
-              <Button></Button>
+            <ButtonDisplay beforeImage={before} afterImage={after} direction={"right"} text={""}/>
+              hfqwwohfqoh
+             
 
             </div>
-            <div className="chinese"></div>
+            <div className="chinese">
+              <ButtonDisplay beforeImage={before} afterImage={after} direction={"right"} text={""}/>
+            </div>
         </div>
     )
 }

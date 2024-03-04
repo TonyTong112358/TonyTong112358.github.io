@@ -5,11 +5,15 @@ import "./introduction.css"
 import gradPhoto from "./sprites/graduation.jpg"
 import funkyTown from "../../assets/sound/funkyTown.mp3"
 import fade from "../../assets/sound/fade.mp3"
+import { hover } from "@testing-library/user-event/dist/hover"
+import tacoBell from "../../assets/sound/tacoBell.mp3"
 export default function IntroductionScreen(){
     let [play, {pause}] = useSound(funkyTown)
     let [fadeAway] = useSound(fade)
+    const [taco] = useSound(tacoBell)
     const [click,setClicked]  = useState(false)
     const [isPlaying,setIsPlaying] = useState(false)
+    const [hovering,setHovering] = useState(false)
     const playSong = () =>{
         if(!isPlaying){
             play()
@@ -32,6 +36,11 @@ export default function IntroductionScreen(){
         
     
     }
+    const onHover= ()=>{
+
+        setHovering(true)
+        taco()
+    }
     const pauseSong = () =>{
         if(isPlaying){
             pause()
@@ -51,18 +60,23 @@ export default function IntroductionScreen(){
             
             
             <div className="intro"  >
-                <h1 > Welcome to an Autoethnography about: <br/>
+                <h1 >  <span style={{fontSize:"30px"}}>Welcome to an Autoethnography about:</span> <br/>
                 <span className = "centerMe">&#129313; me &#129313;</span>
-                
+                Your fellow yellow
                 
                 </h1>
 
-                <div className="exitButton"
+                <div className={"exitButton" +(hovering?" hover":"")}
+                back
+                onMouseEnter={onHover}
+                onMouseLeave={()=>setHovering(false)}
                 onClick={()=>{
                     setClicked(true)
                     deleteEverything()
-                    }}>
-                    
+                    }}
+                
+                    >
+                
                 </div>
                 
 

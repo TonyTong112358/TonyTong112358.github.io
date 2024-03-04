@@ -23,7 +23,7 @@ export default function App() {
   // ]
   return (
     <div>
-      <IntroductionScreen/>
+      {/* <IntroductionScreen/> */}
       <MainMenu /> 
   
       {/* <TimeLine/> */}

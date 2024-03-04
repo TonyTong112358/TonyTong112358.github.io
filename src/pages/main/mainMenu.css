@@ -11,7 +11,8 @@
   z-index: 1;
   /* background-color: aqua; */
   display:flex;
-  
+  position: absolute;
+  z-index: 1;
   width:100%;
   height:100vh;
   justify-content: right;
@@ -39,14 +40,14 @@
   transition: 3s ease-out;
   width: 0vh;
 }
-#left{
+.left{
   display:flex;
   
   width: 50%;
   height: 100vh;
   justify-content: right;
 }
-#right{
+.right{
   display: flex;
   width: 50%;
   height: 100vh;
@@ -56,7 +57,7 @@
   
   position: absolute;
 
-  background-color: green;
+  /* background-color: green; */
   
   
   /* transition: opacity 1s ease; */

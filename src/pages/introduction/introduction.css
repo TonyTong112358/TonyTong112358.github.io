@@ -13,6 +13,11 @@
 }
 
 .screen.clicked{
+    /* z-index: 20; */
+    /* background-repeat: no-repeat;
+    object-fit: cover;
+    position:absolute; */
+    background-image: url('./sprites/anguish.jpg');
     transition: 3s ease-out;
     opacity: 0;
     
@@ -25,7 +30,7 @@
     background: linear-gradient(to bottom, #e66465, #9198e5);
     
 }
-.exitButton:hover{
+.exitButton.hover{
     background-image: url("./sprites/tiffany.jpg");
 
     background-position:center;

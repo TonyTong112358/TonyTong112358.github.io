@@ -75,15 +75,15 @@ export const MainMenu = () => {
 
   const handleDelete = ()=>{
     boomAudio()
-    const curtain = document.getElementsByClassName("curtain")
-      const buttons = document.getElementsByClassName("button")
-      let i =0
-      while(buttons.length>0){
-        
-        
-        
-        buttons[i].parentNode.removeChild(buttons[i])
-      }
+    
+    const buttons = document.getElementsByClassName("button")
+    let i =0
+    while(buttons.length>0){
+      
+      
+      
+      buttons[i].parentNode.removeChild(buttons[i])
+    }
     
     setTimeout(() => {
       setDeleteEvery(true)
@@ -99,7 +99,7 @@ export const MainMenu = () => {
         
         {images.map((image,index) =><CircleButton parent = {parent} image = {image} clicked = {clicked}/>)}
         
-        <div id="right" ref={curtain}>
+        <div className="right" ref={curtain}>
 
           <div
             ref={mainCharacter}
@@ -151,7 +151,8 @@ export const MainMenu = () => {
           </div>
         </div>
 
-        <div id="left">
+        <div className="left">
+
           <div
             className={
               "rectangle" +
