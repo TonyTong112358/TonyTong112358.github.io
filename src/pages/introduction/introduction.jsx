@@ -4,8 +4,10 @@ import cock from "./sprites/cock.gif"
 import "./introduction.css"
 import gradPhoto from "./sprites/graduation.jpg"
 import funkyTown from "../../assets/sound/funkyTown.mp3"
+import fade from "../../assets/sound/fade.mp3"
 export default function IntroductionScreen(){
     let [play, {pause}] = useSound(funkyTown)
+    let [fadeAway] = useSound(fade)
     const [click,setClicked]  = useState(false)
     const [isPlaying,setIsPlaying] = useState(false)
     const playSong = () =>{
@@ -15,11 +17,13 @@ export default function IntroductionScreen(){
         }
     }
     const deleteEverything = ()=>{
+        fadeAway()
         setTimeout(()=>{
             const element = document.getElementsByClassName("screen")
             // element.remove()
             element[0].remove()
             pause()
+            
             
         },3000)
         // const element = document.getElementsByClassName("screen")
@@ -63,8 +67,8 @@ export default function IntroductionScreen(){
                 
 
             </div>
-            <div className="funkyImages">
-                <img style = {{alignItems:"right",height:"100%"}}src = {gradPhoto}/>
+            <div className="funkyImages" style = {{justifyContent:"space-between",height:"100%"}}>
+                <img src = {gradPhoto}/>
                 
             </div>
             

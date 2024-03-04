@@ -4,7 +4,8 @@ import "./mainMenu.css";
 import useSound from "use-sound";
 import boom from '../../assets/sound/boom.mp3'
 import waterphone from '../../assets/sound/waterphone.mp3'
-
+import leftMap from './image/mapLeft.png'
+import rightMap from './image/mapRight.png'
 
 const importAll = (r) => r.keys().map(r);
 const images = importAll(require.context('../../assets/people', false, /\.(png|jpe?g|svg)$/));
@@ -51,10 +52,12 @@ export const MainMenu = () => {
   const [clicked, setClicked] = useState(false);
   const curtain = useRef(null)
   const parent =useRef(null)
+  const [deleteEvery,setDeleteEvery] = useState(false)
   const mainCharacter = useRef(null)
   const [boomAudio] = useSound(boom)
   const [waterphineAudio] = useSound(waterphone)
   const [played, setPlayed] =useState(false)
+  const[displayTimeLine,setDisplayTimeLine] = useState(false)
   const [mousePosition,setMousePosition] = useState({
     x:0,
     y:0
@@ -68,66 +71,50 @@ export const MainMenu = () => {
         y:parseInt(Math.random()*(parent.current.offsetHeight-50))+50,
       }
     )
-  }, [parent]);
+  }, []);
+
   const handleDelete = ()=>{
     boomAudio()
-    
-    setTimeout(() => {
-      
+    const curtain = document.getElementsByClassName("curtain")
       const buttons = document.getElementsByClassName("button")
       let i =0
-      while(buttons.length>1){
-        if (buttons[0].id ==="main-character"){
-          i+=1
-        }
+      while(buttons.length>0){
+        
         
         
         buttons[i].parentNode.removeChild(buttons[i])
       }
-    }, 2000);
+    
+    setTimeout(() => {
+      setDeleteEvery(true)
+      
+    }, 3000);
     
   }
- 
-  
-  const handleMouseMove = (event)=>{
-    if(clicking){
-      setMousePosition({x:event.clientX,y:event.clientY})
-    }
-  }
-  
-  
-  
 
-  
-  
-
-  
-
-  
   return (
     <>
-      <div className="curtain" ref = {parent} >
+      { !deleteEvery && <div className="curtain" ref = {parent} >
+
+        
         {images.map((image,index) =><CircleButton parent = {parent} image = {image} clicked = {clicked}/>)}
         
         <div id="right" ref={curtain}>
 
           <div
+            ref={mainCharacter}
             id = "main-character"
-            className={"button"+" shadow"}
+            className={"button" }
             onMouseEnter={() => {
               if(!clicked){
-                boomAudio()
+                waterphineAudio()
               }
               
               setHover(true)
               
-
-              
-              
-              
             }}
             onMouseLeave={() => {setHover(false)}}
-            onMouseMove={handleMouseMove}
+            
             onMouseDown={() =>{
               if(!clicked) {
                 setClicking(true)
@@ -146,7 +133,7 @@ export const MainMenu = () => {
             }}
             // onClick={ }
             
-            style={{left:mousePosition.x-50,top:mousePosition.y-50}}
+            style={{left:mousePosition.x-100,top:mousePosition.y-100}}
             
       
           ></div>
@@ -158,6 +145,7 @@ export const MainMenu = () => {
               (hover ? " active" : "") +
               (clicked ? " clicked" : "")
             }
+            style={{backgroundImage:"url("+rightMap+")",backgroundPosition:"right"}}
           >
             
           </div>
@@ -170,9 +158,12 @@ export const MainMenu = () => {
               (hover ? " active" : "") +
               (clicked ? " clicked" : "")
             }
+            style={{backgroundImage:"url("+leftMap+")",backgroundPosition:"left"}}
           ></div>
         </div>
-      </div>
-    </>
-  );
-};
+      </div>}
+      </>
+
+      
+    );
+  };

@@ -1,3 +1,74 @@
-div {
+.display {
+    
+    display: flex;
+    
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: none;
     cursor: pointer;
-  }
+    transition: all 0.2s ease-in-out;
+}
+  
+.display-image {
+    width: 50px;
+    height: 50px;
+}
+  
+.hovered {
+    transform: scale(1.1);
+}
+  
+.clicked {
+    transform: scale(1.2);
+}
+  
+.arrow {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    margin-left: 10px;
+}
+  
+.right {
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent blue;
+}
+  
+.left {
+    border-width: 10px 10px 10px 0;
+    border-color: transparent blue transparent transparent;
+    margin-right: 10px;
+}
+.textbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: 2px solid blue;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+  
+.hovered {
+    background-color: blue;
+    color: white;
+}
+  
+.right {
+    margin-left: 10px;
+}
+  
+.left {
+    margin-right: 10px;
+}
+#america{
+    background-color: red;
+}
+#timeline{
+    position: absolute;
+    display: flex;
+    z-index: -2;
+}

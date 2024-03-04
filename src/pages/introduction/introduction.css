@@ -12,7 +12,7 @@
     background: radial-gradient(#fc466b,#3f5efb);
 }
 
-*.clicked{
+.screen.clicked{
     transition: 3s ease-out;
     opacity: 0;
     
