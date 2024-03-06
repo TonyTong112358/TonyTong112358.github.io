@@ -55,7 +55,7 @@ export const MainMenu = () => {
   const [deleteEvery,setDeleteEvery] = useState(false)
   const mainCharacter = useRef(null)
   const [boomAudio] = useSound(boom)
-  const [waterphineAudio] = useSound(waterphone)
+  const [waterphineAudio] = useSound(waterphone,{interrupt:true})
   const [played, setPlayed] =useState(false)
   const[displayTimeLine,setDisplayTimeLine] = useState(false)
   const [mousePosition,setMousePosition] = useState({

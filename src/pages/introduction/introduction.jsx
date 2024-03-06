@@ -59,6 +59,7 @@ export default function IntroductionScreen(){
                     onMouseLeave={pauseSong}
                 // style = {{transform:"scale(0.5)"}}
                 />
+                <img src = {family} style= {{height:"52.5%",width:"100%"}}></img>
                 
             </div>
             
