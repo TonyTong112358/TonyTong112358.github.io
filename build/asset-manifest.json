@@ -1,0 +1,42 @@
+{
+  "files": {
+    "main.css": "/static/css/main.d6755dee.css",
+    "main.js": "/static/js/main.efadae90.js",
+    "static/js/885.0f2010f2.chunk.js": "/static/js/885.0f2010f2.chunk.js",
+    "static/js/453.9f6f8f6e.chunk.js": "/static/js/453.9f6f8f6e.chunk.js",
+    "static/media/family.jpg": "/static/media/family.56e2c8c1055388f084d8.jpg",
+    "static/media/funkyTown.mp3": "/static/media/funkyTown.f8fd4dbe1302e193381a.mp3",
+    "static/media/cock.gif": "/static/media/cock.8f8fea265343514db493.gif",
+    "static/media/chineseFood.jpg": "/static/media/chineseFood.7eb43522d2a43d0cf49d.jpg",
+    "static/media/chrimasFood.jpg": "/static/media/chrimasFood.513d8706944d583daea7.jpg",
+    "static/media/edwardo.jpg": "/static/media/edwardo.c3454f65db364b79e42f.jpg",
+    "static/media/tonyvpn_withnose.png": "/static/media/tonyvpn_withnose.4284b2ae5bd6645ffc01.png",
+    "static/media/karina.jpg": "/static/media/karina.22ea5a489083a516a1b5.jpg",
+    "static/media/elaine.png": "/static/media/elaine.0c794b181ccb3f2dd5c4.png",
+    "static/media/crystal.jpg": "/static/media/crystal.1f6b4777b4df144b98c1.jpg",
+    "static/media/elijah.jpg": "/static/media/elijah.156c4d042570c5717287.jpg",
+    "static/media/waterphone.mp3": "/static/media/waterphone.1722bf7faa299d894980.mp3",
+    "static/media/bgFlag.png": "/static/media/bgFlag.7f8acb796b6ce4fe52fb.png",
+    "static/media/mapRight.png": "/static/media/mapRight.3a4a1c0bc5a3fe9701ef.png",
+    "static/media/mapLeft.png": "/static/media/mapLeft.d8f537f68469208ba7a1.png",
+    "static/media/ahhh.mp3": "/static/media/ahhh.e0a66e9fddd2ccd8bdb4.mp3",
+    "static/media/aaron.jpg": "/static/media/aaron.a758ea9fde461c929e9a.jpg",
+    "static/media/clown.mp3": "/static/media/clown.527828b335bb225c8680.mp3",
+    "static/media/tacoBell.mp3": "/static/media/tacoBell.89d109e0e0034db5c9b9.mp3",
+    "static/media/fade.mp3": "/static/media/fade.1f8298c7bf1ee4185abf.mp3",
+    "static/media/MyHouse.jpg": "/static/media/MyHouse.dd3f044be7485608a1bd.jpg",
+    "static/media/boom.mp3": "/static/media/boom.6b845f4603a76cb402b7.mp3",
+    "static/media/ryan.jpg": "/static/media/ryan.b9ea9cde5d98b032d810.jpg",
+    "static/media/americhina.png": "/static/media/americhina.30969f466c4051ac60a7.png",
+    "static/media/beijing.jpg": "/static/media/beijing.e8c6950185f9b332cb11.jpg",
+    "index.html": "/index.html",
+    "main.d6755dee.css.map": "/static/css/main.d6755dee.css.map",
+    "main.efadae90.js.map": "/static/js/main.efadae90.js.map",
+    "885.0f2010f2.chunk.js.map": "/static/js/885.0f2010f2.chunk.js.map",
+    "453.9f6f8f6e.chunk.js.map": "/static/js/453.9f6f8f6e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d6755dee.css",
+    "static/js/main.efadae90.js"
+  ]
+}
