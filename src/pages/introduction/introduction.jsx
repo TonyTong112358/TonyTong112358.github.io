@@ -2,11 +2,13 @@ import { useState } from "react"
 import useSound from "use-sound"
 import cock from "./sprites/cock.gif"
 import "./introduction.css"
-import gradPhoto from "./sprites/graduation.jpg"
+import gradPhoto from "./sprites/tonyvpn_withnose.png"
 import funkyTown from "../../assets/sound/funkyTown.mp3"
 import fade from "../../assets/sound/fade.mp3"
-import { hover } from "@testing-library/user-event/dist/hover"
+import family from "./sprites/family.jpg"
 import tacoBell from "../../assets/sound/tacoBell.mp3"
+import clown from "../../assets/sound/clown.mp3"
+
 export default function IntroductionScreen(){
     let [play, {pause}] = useSound(funkyTown)
     let [fadeAway] = useSound(fade)
@@ -14,6 +16,7 @@ export default function IntroductionScreen(){
     const [click,setClicked]  = useState(false)
     const [isPlaying,setIsPlaying] = useState(false)
     const [hovering,setHovering] = useState(false)
+    const [clownSound] = useSound(clown)
     const playSong = () =>{
         if(!isPlaying){
             play()
@@ -56,13 +59,14 @@ export default function IntroductionScreen(){
                     onMouseLeave={pauseSong}
                 // style = {{transform:"scale(0.5)"}}
                 />
+                
             </div>
             
             
             <div className="intro"  >
-                <h1 >  <span style={{fontSize:"30px"}}>Welcome to an Autoethnography about:</span> <br/>
+                <h1 >  <span style={{fontSize:"30px", backgroundColor:"radial-gradient(#2E3192 ,#1BFFFF)" ,color:"white"} }>Welcome to an Autoethnography about:</span> <br/>
                 <span className = "centerMe">&#129313; me &#129313;</span>
-                Your fellow yellow
+                <center><span style = {{fontSize:"20px", color:"white"}}>Your fellow yellow</span></center>
                 
                 </h1>
 
@@ -79,10 +83,11 @@ export default function IntroductionScreen(){
                 
                 </div>
                 
-
+                
+                    
             </div>
-            <div className="funkyImages" style = {{justifyContent:"space-between",height:"100%"}}>
-                <img src = {gradPhoto}/>
+            <div className="funkyImages"  style = {{justifyContent:"space-between",height:"100%"}}>
+                <img src = {gradPhoto} onMouseEnter={clownSound} />
                 
             </div>
             

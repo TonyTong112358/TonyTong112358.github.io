@@ -1,16 +1,28 @@
 import React, { useState, useRef } from "react";
 import "./timeLine.css"
-import before from "./images/crystal.jpg"
-import after from "./images/edwardo.jpg"
-export const ButtonDisplay = ({ beforeImage, afterImage, direction, text }) => {
+
+import after from "./images/sexyMan.jpg"
+import bgImage from "./images/bgFlag.png"
+import americhina from "./images/americhina.png"
+import chineseNewYear from "./images/CNY.jpg"
+import christmas from './images/christmas.jpg'
+import chineseFood from "./images/chineseFood.jpg"
+import americanFood from "./images/chrimasFood.jpg"
+import eng from "./images/english.jpg"
+import chinese from "./images/chinese.png"
+import home from "./images/MyHouse.jpg"
+import school from "./images/laRosa.jpg"
+import whiteHouse from "./images/washington.jpg"
+import beijing from "./images/beijing.jpg"
+import trump from "./images/donald.jpg"
+import winnieThePooh from "./images/xijingping.jpg"
+export const ButtonDisplay = ({ beforeImage, afterImage, direction, text ,row, column}) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
   
 
   const handleHover = () => {
     setIsHovered(true);
-    
-    
   };
 
   const handleUnhover = () => {
@@ -20,81 +32,170 @@ export const ButtonDisplay = ({ beforeImage, afterImage, direction, text }) => {
   const handleClick = () => {
     setIsClicked(!isClicked);
   };
-
+  
+  const base = direction === "up" ? "upArrowBase" :"downArrowBase"
+  const arrow = direction ==="up" ? "upArrowTip" :"downArrowTip"
+  const classUse = direction ==="up" ? "upButtonText" :"downButtonText"
+  
   return (
-    <button
-      className={`display ${isHovered ? "hovered" : ""} ${
-        isClicked ? "clicked" : ""
-      }`}
-      onMouseEnter={handleHover}
-      onMouseLeave={handleUnhover}
-      onClick={handleClick}
-      style={{
-        backgroundImage: isHovered?`url(${afterImage})` :`url(${beforeImage})`,
+    <div className={classUse} style={{gridRow:row, gridColumn:column}}>
+        <div
         
+          className={`displays${isHovered ? " hovered" : ""} ${
+            isClicked ? "clicked" : ""
+          }`}
+          onMouseEnter={handleHover}
+          onMouseLeave={handleUnhover}
+          onClick={handleClick}
+          style={{
+            backgroundImage: (isHovered || isClicked)?`url(${afterImage})` :`url(${beforeImage})`,
+            
+            gridRow:direction=== "down" ?'1':'4',
+            gridColumn:'1',
+          }}
+        >
+        </div>
+        
+        <div className= {base+(isClicked ?" arrow-active":"")}
+          style = {{gridRow: (direction === "down" ?'2':'3'),
+          gridColumn:'1'}}
+          >
 
-      }}
-
-    >
-      {/* <img
-        src={isClicked ? afterImage : beforeImage}
-        alt="Button"
-        className="display-image"
-      /> */}
-     
-      {isClicked && (
-        <>
-          <span className={`arrow ${direction}`}></span>
-          <Textbox text={text} direction={direction} />
-        </>
-      )}
-      
-    </button>
+        </div>
+        <div className={arrow+(isClicked ?" arrow-active" :"")}
+          style={{gridRow:(direction==="down" ?'3':'2'),
+          gridColumn:'1'}}>
+            
+        </div>
+        <div className= {"textbox" + ( isClicked ?" arrow-active" :"")}>
+          {text}
+        </div>
+    </div>
+    
   );
 };
 
 
-const Textbox = ({ text, direction }) => {
-    const [isHovered, setIsHovered] = useState(false);
-    
+
+const Bar = ({row,column}) =>{
   
-    const handleHover = () => {
-      setIsHovered(true);
-    };
-  
-    const handleUnhover = () => {
-      setIsHovered(false);
-    };
-  
-    const handleClick = () => {
-      
-    };
-  
-    return (
-      <div
-        className={`textbox ${direction} ${isHovered ? "hovered" : ""}`}
-        onMouseEnter={handleHover}
-        onMouseLeave={handleUnhover}
-        onClick={handleClick}
-      >
-        {text}
+  return (
+    <div className= {row === 1?"top-bar":"bottom-bar"} style= {{ gridRow:row, gridColumn:column}}>
         
-      </div>
-    );
-  };
+    </div>
+  )
+}
+export const  TimeLine =() =>{
+  const topVal = [
+    
+    {
+      first:chineseNewYear,
+      second:chineseFood,
+      text:"Meals ususally consists of traditionally cooked food in combination with takeout ",
+    },
+    {
+      first:chinese,
+      second:home,
+      text:'"Outside you are american, inside you are chinese"-my dad',
 
-export const TimeLine =() =>{
+    },
+    {
+      first:beijing,
+      second:winnieThePooh,
+      text:"Lack of freedom of speech, lack of diversity ",
+
+    }
+    
+    
+  ]
+  const botVal = [
+    
+    {
+      first:christmas,
+      second:americanFood,
+      text:"Meals ususally consists of takeout plus some other side dish we would cook ",
+    },
+    {
+      first:eng,
+      second:school,
+      text:"English was the only language I would speak from kindergarten to 6th grade",
+
+    },
+    {
+      first:whiteHouse,
+      second:trump,
+      text:"Freedom of speech, a lot of diversity",
+
+    }
+    
+    
+  ]
+
+
     return(
-        <div id="timeLine" >
-            <div className="american">
-            <ButtonDisplay beforeImage={before} afterImage={after} direction={"right"} text={""}/>
-              hfqwwohfqoh
-             
+      <div style = {{display:"grid",gridTemplateColumns:"80vw 20vw", 
+      backgroundImage:"url("+bgImage+")",
+      backgroundSize:"100% 100%",
+      
+      
+      }}>
+        <div className="timeLine" style ={{gridColumn:"1"}} >
+          {/* top portion */}
+          
+          {
+            topVal.map((item,index) =>{
+              return(<ButtonDisplay beforeImage={item.first}
+              afterImage={item.second} 
+              direction={"down"}
+              text={item.text}
+              column={2*index+1}
+              row= {1} 
 
-            </div>
-            <div className="chinese">
-              <ButtonDisplay beforeImage={before} afterImage={after} direction={"right"} text={""}/>
-            </div>
+              />)
+              
+            })
+          }
+          {
+            [2,4].map((item)=>{
+              return (<Bar row= {1} column={item}/>)
+            })
+
+            
+          }
+          {
+            botVal.map((item,index) =>{
+              return(<ButtonDisplay beforeImage={item.first}
+              afterImage={item.second} 
+              direction={"up"}
+              text={item.text}
+              column={2*index+1}
+              row={2}
+
+              />)
+              
+            })
+          }
+          <div className="diagonal-bar" style = {{gridColumn:"6"}}></div>
+          <div className="diagonal-bar-bottom" style = {{gridColumn:"6", gridRow:'2'}}></div>
+          {
+            [2,4].map((item)=>{
+              return (<Bar column={item} row={2}/>)
+            })
+
+            
+          }
+            
+           
         </div>
+        <div style ={{gridColumn:"2", transform:"translateY(40vh)"}}>
+          <ButtonDisplay
+            beforeImage={americhina}
+            afterImage={after}
+            direction={"down"}
+            text={"Me now :)"}
+          ></ButtonDisplay>
+        </div>
+      </div>
+        
     )
 }

@@ -1,15 +1,15 @@
-.display {
+.displays {
+    border-top: 5px;
     width: 100px;
     height: 100px;
     border-radius: 50%;
-
     display: flex;
-    flex-direction: column;
-    position: absolute;
-    align-items: center;
+    margin: auto auto;
+    /* align-items: center; */
+    align-self:auto;
     justify-content: center;
-    border: none;
-    background-position: center;
+    /* border: none; */
+
     background-size: 100% 100%;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
@@ -27,32 +27,41 @@
 .clicked {
     transform: scale(1.2);
 }
-  
-.arrow {
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    margin-left: 10px;
+.textbox.arrow-active,
+.upArrowTip.arrow-active,
+.downArrowTip.arrow-active,
+.downArrowBase.arrow-active,
+.upArrowBase.arrow-active{
+    opacity: 1;
+    
+    transition: opacity 1s ease-in;
+    
+}
+.downArrowBase{
+
+    opacity: 0;
+    transition: visibility 1s ease-in, opacity 1s ease-in;
+    width:25px;
+    height: 25px;
+    background-color: black;
+    border-radius: 40px 40px 0% 0%;
+    transform: translate(466%);
+    
+
 }
   
-/* .right {
-    border-width: 10px 0 10px 10px;
-    border-color: transparent transparent transparent blue;
-} */
-/*   
-.left {
-    border-width: 10px 10px 10px 0;
-    border-color: transparent blue transparent transparent;
-    margin-right: 10px;
-} */
+
 .textbox {
+    
+    transition: opacity 2s ease-in;
+    opacity: 0;
+    width: 150px;
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: center;
-    background-color: white;
-    border: 2px solid blue;
-    padding: 10px;
+    background: radial-gradient(#FBD72B, #F9484A);
+    /* border: 1px solid blue; */
+    transform: translate(55px);
     cursor: pointer;
     transition: all 0.2s ease-in-out;
 }
@@ -62,32 +71,109 @@
     color: white;
 }
   
-/* .right {
-    margin-left: 10px;
-} */
-  
-/* .left {
-    margin-right: 10px;
-} */
-.american{
-    display: flex;
-    /* justify-content: center; */
-    align-items: center;
-    background-color: red;
-    width:100%;
-    height: 50vh; 
+
+
+
+
+
+
+.upArrowBase{
+    opacity: 0;
+    transition: opacity 1s ease-in;
+    width:25px;
+    height: 25px;
+    background-color: black;
+    border-radius: 0px 0px 40px 40px;
+    transform: translate(466%);
+
 }
-.chinese{
-    display: flex;
-    /* justify-content: center; */
-    align-items: center;
-    /* opacity: 1; */
-    width:100%;
-    height: 50vh; 
-    background-color: aqua;
+.downArrowTip{
+    opacity: 0;
+    transition: opacity 1s ease-in;
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-top: 35px solid black;
+    transform: translate(213%);
 }
-#timeline{
+.upArrowTip{
+    opacity: 0;
+    transition: opacity 1s ease-in;
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 35px solid black;
+    transform: translate(213%);
+}
+.upButtonText{
+    display: grid;
+    
+    grid-template-rows: 130px 35px 25px 120px;
+    grid-template-columns: auto;
+    justify-items: left ;
+    
+    
+    row-gap: 0px;
+
+}
+.downButtonText{
+    display: grid;
+    grid-template-rows: 120px 25px 35px 150px;
+    grid-template-columns: auto;
+    justify-items: left ;
+    
+    row-gap: 0px;
+
+}
+
+.timeLine{
+    /* background-color: black; */
+    display: grid;
+    grid-template-columns: 20vw 7vw 20vw 7vw 20vw 6vw ;
+    grid-template-rows: 50vh 50vh
+}
+
+.top-bar{
+    display: flex;
+    width: 7vw;
+    height: 3vw;
+    background-color: blue;
+    border-radius: 40px 40px 40px 40px;
+    margin-top: 50px;
+}
+.bottom-bar{
+    display: flex;
+    
+    width: 7vw;
+    height: 3vw;
+    background-color: blue;
+    border-radius: 40px 40px 40px 40px;
+    justify-content: end;
+    margin-top:235px;
+}
+
+.diagonal-bar{
     
     display: flex;
-    z-index: -2;
+    height:10vw;
+    height:3vw;
+    background: blue;
+    border-radius: 40px 40px 40px 40px;
+
+    margin-top: 170px;
+    transform: rotate(60deg);
 }
+.diagonal-bar-bottom{
+    
+    display: flex;
+    height:10vw;
+    height:3vw;
+    background: blue;
+    border-radius: 40px 40px 40px 40px;
+
+    margin-top: 130px;
+    transform: rotate(-60deg);
+}
+
