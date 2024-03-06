@@ -83,8 +83,6 @@ export default function IntroductionScreen(){
                     >
                 
                 </div>
-                
-                
                     
             </div>
             <div className="funkyImages"  style = {{justifyContent:"space-between",height:"100%"}}>

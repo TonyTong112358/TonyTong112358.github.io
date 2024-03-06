@@ -6,6 +6,7 @@ import boom from '../../assets/sound/boom.mp3'
 import waterphone from '../../assets/sound/waterphone.mp3'
 import leftMap from './image/mapLeft.png'
 import rightMap from './image/mapRight.png'
+import ahhh from '../../assets/sound/ahhh.mp3'
 
 const importAll = (r) => r.keys().map(r);
 const images = importAll(require.context('../../assets/people', false, /\.(png|jpe?g|svg)$/));
@@ -55,6 +56,7 @@ export const MainMenu = () => {
   const [deleteEvery,setDeleteEvery] = useState(false)
   const mainCharacter = useRef(null)
   const [boomAudio] = useSound(boom)
+  const [ahhhhhhh] = useSound(ahhh)
   const [waterphineAudio] = useSound(waterphone,{interrupt:true})
   const [played, setPlayed] =useState(false)
   const[displayTimeLine,setDisplayTimeLine] = useState(false)

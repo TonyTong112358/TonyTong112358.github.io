@@ -60,6 +60,7 @@
     align-items: start;
     justify-content: center;
     background: radial-gradient(#FBD72B, #F9484A);
+    
     /* border: 1px solid blue; */
     transform: translate(55px);
     cursor: pointer;

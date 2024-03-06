@@ -96,7 +96,7 @@ export const  TimeLine =() =>{
     {
       first:chinese,
       second:home,
-      text:'"Outside you are american, inside you are chinese"-my dad',
+      text:'"Outside my house, you are american, inside my house you are chinese"-my dad',
 
     },
     {
@@ -124,7 +124,7 @@ export const  TimeLine =() =>{
     {
       first:whiteHouse,
       second:trump,
-      text:"Freedom of speech, a lot of diversity",
+      text:"AMERICA!! **** YEAH",
 
     }
     
